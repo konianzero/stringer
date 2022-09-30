@@ -4,10 +4,16 @@ plugins {
 }
 
 group 'net.stringer'
-version '0.0.1-SNAPSHOT'
+version '0.1.0'
+description = 'RSS feed reader'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+def appMainClassName = 'net.stringer.Main'
 
 application {
-    mainClass = 'net.stringer.Main'
+    mainClass = appMainClassName
 }
 
 repositories {
@@ -15,8 +21,21 @@ repositories {
 }
 
 dependencies {
+    implementation 'ch.qos.logback:logback-classic:1.4.1'
+    implementation 'org.slf4j:slf4j-api:2.0.3'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': appMainClassName,
+                'Implementation-Title': description,
+                'Implementation-Version': version
+    }
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 test {

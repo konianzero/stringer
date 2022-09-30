@@ -1,6 +1,24 @@
 # Stringer - your independent correspondent
 
 RSS feed reader.
+Read feeds from xml file.
+
+## Requirements
+
+- JDK 17
+
+## Run
+
+- Build
+    ```bash
+    ./gradlew clean jar
+    ```
+- Run (get .xml from [https://blogs.oracle.com/javamagazine/rss](https://blogs.oracle.com/javamagazine/rss))
+    ```bash
+    java -jar build/libs/stringer-0.1.0.jar javamagazin.xml
+    ```
+- Run with specified (17) JDK, see [run.sh](run.sh)
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
