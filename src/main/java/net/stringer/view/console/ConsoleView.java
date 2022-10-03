@@ -2,6 +2,8 @@ package net.stringer.view.console;
 
 import net.stringer.feed.rss.Channel;
 
+import static net.stringer.util.Util.formatDateTime;
+
 /**
  *
  * Show RSS feeds in terminal.
@@ -15,15 +17,15 @@ public class ConsoleView {
         System.out.println("Channel: " + channel.getTitle() +
                 "\nlink: " + channel.getLink() +
                 "\ndescription: " + channel.getDescription() +
-                "\nlastBuildDate: " + channel.getLastBuildDate() +
-                "\npubDate: " + channel.getPubDate()
+                "\nlastBuildDate: " + formatDateTime(channel.getLastBuildDate()) +
+                "\npubDate: " + formatDateTime(channel.getPubDate())
         );
         System.out.println("\n+++++++++++++++++++++++++++++++++++++++++++++++\n");
         channel.getItems().forEach(item -> {
             System.out.println("Item: " + item.getTitle() +
                     "\nlink: " + item.getLink().replaceAll("[\\s]{2,}", " ") +
                     "\ndescription: " + item.getDescription().replaceAll("[\\s]{2,}", " ") +
-                    "\npubDate: " + item.getPubDate()
+                    "\npubDate: " + formatDateTime(item.getPubDate())
             );
             System.out.println("\n_______________________________________________\n");
         });

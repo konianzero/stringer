@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'net.stringer'
-version '0.1.0'
+version '0.1.1'
 description = 'RSS feed reader'
 
 sourceCompatibility = '17'

@@ -1,7 +1,10 @@
 package net.stringer.feed.rss;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import static net.stringer.util.Util.toZonedDateTime;
 
 /**
  *
@@ -30,11 +33,11 @@ public class Channel {
     /**
      * The last time the content of the channel changed.
      */
-    private final String lastBuildDate;
+    private final ZonedDateTime lastBuildDate;
     /**
      * The publication date for the content in the channel.
      */
-    private final String pubDate;
+    private final ZonedDateTime pubDate;
 
     private final List<Item> items = new ArrayList<>();
 
@@ -45,8 +48,8 @@ public class Channel {
         private String title;
         private String link;
         private String description;
-        private String lastBuildDate;
-        private String pubDate;
+        private ZonedDateTime lastBuildDate;
+        private ZonedDateTime pubDate;
 
         public ChannelBuilder(String title, String link, String description) {
             this.title = title;
@@ -55,12 +58,12 @@ public class Channel {
         }
 
         public ChannelBuilder lastBuildDate(String lastBuildDate) {
-            this.lastBuildDate = lastBuildDate;
+            this.lastBuildDate = toZonedDateTime(lastBuildDate);
             return this;
         }
 
         public ChannelBuilder pubDate(String pubDate) {
-            this.pubDate = pubDate;
+            this.pubDate = toZonedDateTime(pubDate);
             return this;
         }
 
@@ -89,11 +92,11 @@ public class Channel {
         return description;
     }
 
-    public String getLastBuildDate() {
+    public ZonedDateTime getLastBuildDate() {
         return lastBuildDate;
     }
 
-    public String getPubDate() {
+    public ZonedDateTime getPubDate() {
         return pubDate;
     }
 

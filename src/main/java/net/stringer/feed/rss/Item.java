@@ -1,5 +1,9 @@
 package net.stringer.feed.rss;
 
+import java.time.ZonedDateTime;
+
+import static net.stringer.util.Util.toZonedDateTime;
+
 /**
  *
  * RSS item element.
@@ -28,7 +32,7 @@ public class Item {
     /**
      * Indicates when the item was published.
      */
-    private final String pubDate;
+    private final ZonedDateTime pubDate;
 
     /**
      * Item builder.
@@ -37,7 +41,7 @@ public class Item {
         private String title;
         private String link;
         private String description;
-        private String pubDate;
+        private ZonedDateTime pubDate;
 
         public ItemBuilder(String title, String link, String description) {
             this.title = title;
@@ -46,7 +50,7 @@ public class Item {
         }
 
         public ItemBuilder pubDate(String pubDate) {
-            this.pubDate = pubDate;
+            this.pubDate = toZonedDateTime(pubDate);
             return this;
         }
 
@@ -74,7 +78,7 @@ public class Item {
         return description;
     }
 
-    public String getPubDate() {
+    public ZonedDateTime getPubDate() {
         return pubDate;
     }
 }
