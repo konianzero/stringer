@@ -1,7 +1,7 @@
 # Stringer - your independent correspondent
 
 RSS feed reader.
-Read feeds from xml file.
+Read feeds from xml file or web sources.
 
 ## Requirements
 
@@ -13,9 +13,13 @@ Read feeds from xml file.
     ```bash
     ./gradlew clean jar
     ```
-- Run (get .rss from [https://blogs.oracle.com/javamagazine/rss](https://blogs.oracle.com/javamagazine/rss))
+  - Run
+      ```bash
+      java -jar build/libs/stringer-0.2.0.jar https://blogs.oracle.com/javamagazine/rss
+      ```
+    - Or get .rss from [https://blogs.oracle.com/javamagazine/rss](https://blogs.oracle.com/javamagazine/rss)
     ```bash
-    java -jar build/libs/stringer-0.1.0.jar javamagazin.rss
+    java -jar build/libs/stringer-0.2.0.jar javamagazin.rss
     ```
 - Run with specified (17) JDK, see [run.sh](run.sh)
 

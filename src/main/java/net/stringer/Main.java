@@ -22,7 +22,7 @@ public class Main {
 
             source.closeInputSteam();
         } else {
-            System.out.println("No xml file to read!");
+            System.out.println("No source to read!");
         }
     }
 }

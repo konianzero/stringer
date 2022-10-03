@@ -96,11 +96,15 @@ public class RSSFeedParser extends AbstractFeedParser {
     }
 
     private String getCharacterData(XMLEventReader eventReader) throws XMLStreamException {
-        String result = "";
+        String data = "";
         XMLEvent event = eventReader.nextEvent();
         if (event.isCharacters()) {
-            result = event.asCharacters().getData();
+            data = event.asCharacters().getData();
         }
-        return result;
+        return removeEndSpaces(data);
+    }
+
+    private String removeEndSpaces(String data) {
+        return data.replaceAll("\\s+$", "");
     }
 }
