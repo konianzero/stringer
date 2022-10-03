@@ -13,9 +13,9 @@ Read feeds from xml file.
     ```bash
     ./gradlew clean jar
     ```
-- Run (get .xml from [https://blogs.oracle.com/javamagazine/rss](https://blogs.oracle.com/javamagazine/rss))
+- Run (get .rss from [https://blogs.oracle.com/javamagazine/rss](https://blogs.oracle.com/javamagazine/rss))
     ```bash
-    java -jar build/libs/stringer-0.1.0.jar javamagazin.xml
+    java -jar build/libs/stringer-0.1.0.jar javamagazin.rss
     ```
 - Run with specified (17) JDK, see [run.sh](run.sh)
 

@@ -4,6 +4,6 @@
 export JAVA_HOME="/opt/java/amazon_jdk/amazon-corretto-17.0.1.12.1-linux-x64"
 echo JAVA_HOME=\"$JAVA_HOME\"
 
-./gradlew run --args='javamagazin.xml'
+./gradlew run --args='javamagazin.rss'
 #./gradlew clean jar
-#java -jar build/libs/stringer-0.1.0.jar javamagazin.xml
+#java -jar build/libs/stringer-0.1.0.jar javamagazin.rss
