@@ -23,8 +23,8 @@ public class ConsoleView {
         System.out.println("\n+++++++++++++++++++++++++++++++++++++++++++++++\n");
         channel.getItems().forEach(item -> {
             System.out.println("Item: " + item.getTitle() +
-                    "\nlink: " + item.getLink().replaceAll("[\\s]{2,}", " ") +
-                    "\ndescription: " + item.getDescription().replaceAll("[\\s]{2,}", " ") +
+                    "\nlink: " + item.getLink() +
+                    "\ndescription: " + item.getDescription() +
                     "\npubDate: " + formatDateTime(item.getPubDate())
             );
             System.out.println("\n_______________________________________________\n");

@@ -1,7 +1,7 @@
 # Stringer - your independent correspondent
 
 RSS feed reader.
-Read feeds from xml file or web sources.
+Read feeds from .rss file or web sources and output to console.
 
 ## Requirements
 
